@@ -71,3 +71,52 @@ foreach (var course in courseManager.GetAll())
 {
     Console.WriteLine(course.Id + ":" + course.Name);
 }
+
+
+IndividualCustomer customer1 = new IndividualCustomer();
+customer1.Id = 1;
+customer1.NationalIdentity = "12314234";
+customer1.FirstName = "Baran";
+customer1.LastName = "Aydın";
+customer1.CustomerNumber = "12314";
+
+IndividualCustomer customer2 = new IndividualCustomer();
+customer2.Id = 2;
+customer2.NationalIdentity = "12314234";
+customer2.FirstName = "Hüseyin";
+customer2.LastName = "Aydın";
+customer2.CustomerNumber = "12314";
+
+CoorporateCustomer customer3 = new CoorporateCustomer();
+customer3.Id = 3;
+customer3.Name = "Kodlamaio";
+customer3.CustomerNumber = "1234235";
+customer3.TaxNumber = "1232134534";
+
+CoorporateCustomer customer4 = new CoorporateCustomer();
+customer4.Id = 4;
+customer4.Name = "Udemy";
+customer4.CustomerNumber = "12342357698";
+customer4.TaxNumber = "1232134534";
+
+int number1 = 20;
+int number2 = 30;
+number1 = number2;
+number2 = 50;
+Console.WriteLine(number1);  //30
+Console.WriteLine(number2);  //50
+
+string[] cities1 = { "Muğla", "Aydın", "Ankara" };
+string[] cities2= { "Bursa", "Adana", "İzmir" };
+
+cities1 = cities2;
+cities2[0] = "İstanbul";
+Console.WriteLine(cities1[0]);  //İstanbul
+Console.WriteLine(cities2[0]);
+
+BaseCustomer[] customers = { customer1, customer2, customer3, customer4 };
+
+foreach (BaseCustomer customer in customers)
+{
+    Console.WriteLine(customer.CustomerNumber);
+}
